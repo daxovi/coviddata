@@ -1,4 +1,5 @@
 var testovani = document.getElementById('testovaniChart').getContext('2d');
+//testovani.height = 500;
 var testovaniChart = new Chart(testovani, {
     // The type of chart we want to create
     type: 'bar',
@@ -24,7 +25,8 @@ var testovaniChart = new Chart(testovani, {
 
     // Configuration options go here
     options: {
-        aspectRatio: 1,
+        maintainAspectRatio: false,
+        // aspectRatio: 1,
         legend: {
             labels: {
                 boxWidth: 5,
@@ -35,7 +37,13 @@ var testovaniChart = new Chart(testovani, {
         },
         scales: {
             xAxes: [{
-                stacked: true
+                stacked: true,
+                ticks: {
+                    autoSkip: true,
+                    //maxTicksLimit: 10,
+                    maxRotation: 0,
+                    minRotation: 0,
+                }
             }],
             yAxes: [{
                 stacked: true

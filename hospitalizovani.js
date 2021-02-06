@@ -23,7 +23,8 @@ var hospitalizovaniChart = new Chart(hospitalizovani, {
 
     // Configuration options go here
     options: {
-        aspectRatio: 1,
+        maintainAspectRatio: false,
+        // aspectRatio: 1,
         legend: {
             labels: {
                 boxWidth: 5,
@@ -34,12 +35,17 @@ var hospitalizovaniChart = new Chart(hospitalizovani, {
         },
         scales: {
             xAxes: [{
-                stacked: true
+                stacked: true,
+                ticks: {
+                    autoSkip: true,
+                    //maxTicksLimit: 10,
+                    maxRotation: 0,
+                    minRotation: 0,
+                }
             }],
             yAxes: [{
                 stacked: true
             }]
         },
-
-    },
+    }
 });
