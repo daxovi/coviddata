@@ -10,14 +10,14 @@ var testovaniChart = new Chart(testovani, {
         datasets: [
             {
                 label: 'PCR',
-                backgroundColor: 'rgb(57, 169, 53)',
-                borderColor: 'rgb(57, 169, 53)',
+                backgroundColor: '#eca814',
+                borderColor: '#eca814',
                 data: [316, 1016, 643, 760, 630, 315, 1025, 955, 782, 614, 214, 1027, 862, 799, 661]
             },
             {
                 label: 'antigenní',
-                backgroundColor: 'rgb(255, 150, 0)',
-                borderColor: 'rgb(255, 150, 0)',
+                backgroundColor: '#d49200',
+                borderColor: '#d49200',
                 data: [260, 267, 254, 209, 241, 290, 287, 277, 262, 259, 303, 279, 291, 305, 310]
             }
         ]
@@ -29,9 +29,9 @@ var testovaniChart = new Chart(testovani, {
         // aspectRatio: 1,
         legend: {
             labels: {
-                boxWidth: 5,
-                usePointStyle: true,
-                fontColor: '#000',
+                boxWidth: 12,
+                //usePointStyle: true,
+                fontColor: '#394A59',
             },
             // align: 'start',
         },
