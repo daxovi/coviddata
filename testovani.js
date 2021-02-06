@@ -38,15 +38,27 @@ var testovaniChart = new Chart(testovani, {
         scales: {
             xAxes: [{
                 stacked: true,
+                gridLines: {
+                    display: false,
+                },
                 ticks: {
                     autoSkip: true,
                     //maxTicksLimit: 10,
                     maxRotation: 0,
                     minRotation: 0,
+                    fontColor: '#394A59',
                 }
             }],
             yAxes: [{
-                stacked: true
+                stacked: true,
+                gridLines: {
+                    color: '#f2f5f8',
+                },
+                ticks: {
+                    fontColor: '#394A59',
+                    //fontSize: '18',
+                },
+                
             }]
         },
     }
