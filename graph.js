@@ -2,6 +2,11 @@ datumy = datumy.reverse();
 dataJip = dataJip.reverse();
 dataStandardni = dataStandardni.reverse();
 dataOckovani = dataOckovani.reverse();
+
+for (let i = 0; i < dataOckovani.length-1; i++) {
+    dataOckovani[i+1] = dataOckovani[i] + dataOckovani[i+1];
+}
+
 dataPCR = dataPCR.reverse();
 dataAntigenni = dataAntigenni.reverse();
 dataOdbery = dataOdbery.reverse();
@@ -149,7 +154,7 @@ function vykresliOckovani() {
     var ockovani = document.getElementById('ockovaniChart').getContext('2d');
     var ockovaniChart = new Chart(ockovani, {
         // The type of chart we want to create
-        type: 'bar',
+        type: 'line',
 
         // The data for our dataset
         data: {
@@ -157,8 +162,8 @@ function vykresliOckovani() {
             datasets: [
                 {
                     label: 'očkování',
-                    // backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(57, 169, 53)',
+                    backgroundColor: '#ECA815',
+                    borderColor: '#D39205',
                     data: dataOckovani,
                 }
             ]
@@ -166,7 +171,42 @@ function vykresliOckovani() {
 
         // Configuration options go here
         options: {
-            aspectRatio: 1,
+            maintainAspectRatio: false,
+            // aspectRatio: 1,
+            legend: {
+                labels: {
+                    boxWidth: 12,
+                    //usePointStyle: true,
+                    fontColor: '#394A59',
+                },
+                // align: 'start',
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        autoSkip: true,
+                        //maxTicksLimit: 10,
+                        maxRotation: 0,
+                        minRotation: 0,
+                        fontColor: '#394A59',
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        color: '#f2f5f8',
+                    },
+                    ticks: {
+                        fontColor: '#394A59',
+                        //fontSize: '18',
+                    },
+
+                }]
+            },
         }
     });
 }

@@ -9,8 +9,8 @@ var ockovaniChart = new Chart(ockovani, {
         datasets: [
             {
                 label: 'očkování',
-                backgroundColor: 'rgb(255, 99, 132, 0)',
-                borderColor: 'rgb(57, 169, 53)',
+                backgroundColor: '#D39205',
+                borderColor: '#D39205',
                 data: [298, 397, 318, 312, 346, 192, 259, 323, 294, 210, 145, 483, 286, 450, 475]
             }
         ]
