@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="cz">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COVIDDATA graf</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div style="height: 300px;">
-    <canvas id="hospitalizovaniChart"></canvas>
-</div>
+        <canvas id="hospitalizovaniChart"></canvas>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="hospitalizovani.js"></script>
+    <script src="data.js"></script>
+    <script src="graph.js"></script>
+    <script>
+        vykresliHospitalizovani();
+    </script>
 </body>
+
 </html>

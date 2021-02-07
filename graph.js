@@ -1,88 +1,173 @@
-var hospitalizovani = document.getElementById('hospitalizovaniChart').getContext('2d');
-var hospitalizovaniChart = new Chart(hospitalizovani, {
-    // The type of chart we want to create
-    type: 'line',
+datumy = datumy.reverse();
+dataJip = dataJip.reverse();
+dataStandardni = dataStandardni.reverse();
+dataOckovani = dataOckovani.reverse();
+dataPCR = dataPCR.reverse();
+dataAntigenni = dataAntigenni.reverse();
+dataOdbery = dataOdbery.reverse();
 
-    // The data for our dataset
-    data: {
-        labels: ['17. 1.', '18. 1.', '19. 1.', '20. 1.', '21. 1.', '24. 1.', '25. 1.', '26. 1.', '27. 1.', '28. 1.', '31. 1.', '1. 2.', '2. 2.', '3. 2.', '4. 2.'],
-        datasets: [{
-            label: 'JIP pokoj',
-            //backgroundColor: 'rgb(255, 255, 255)',
-            borderColor: 'rgb(255, 92, 111)',
-            data: [45, 46, 47, 51, 47, 45, 44, 38, 38, 37, 35, 36, 31, 30, 28]
+function vykresliHospitalizovani() {
+    var hospitalizovani = document.getElementById('hospitalizovaniChart').getContext('2d');
+    var hospitalizovaniChart = new Chart(hospitalizovani, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: datumy,
+            datasets: [{
+                label: 'JIP pokoj',
+                backgroundColor: '#D04818',
+                borderColor: '#D04818',
+                data: dataJip,
+            },
+            {
+                label: 'Standardní pokoj',
+                backgroundColor: '#E69463',
+                borderColor: '#E69463',
+                data: dataStandardni,
+            }
+            ]
         },
-        {
-            label: 'Standardní pokoj',
-            // backgroundColor: 'rgb(255, 236, 0)',
-            borderColor: 'rgb(99, 102, 202)',
-            data: [82, 63, 64, 70, 66, 69, 59, 61, 60, 63, 69, 58, 56, 52, 45]
+
+        // Configuration options go here
+        options: {
+            maintainAspectRatio: false,
+            // aspectRatio: 1,
+            legend: {
+                labels: {
+                    boxWidth: 12,
+                    //usePointStyle: true,
+                    fontColor: '#394A59',
+                },
+                // align: 'start',
+            },
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        autoSkip: true,
+                        //maxTicksLimit: 10,
+                        maxRotation: 0,
+                        minRotation: 0,
+                        fontColor: '#394A59',
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        color: '#f2f5f8',
+                    },
+                    ticks: {
+                        fontColor: '#394A59',
+                        //fontSize: '18',
+                    },
+
+                }]
+            },
         }
-        ]
-    },
+    });
+}
 
-    // Configuration options go here
-    options: {
-        aspectRatio: 1,
-    }
-});
+function vykresliTestovani() {
+    var testovani = document.getElementById('testovaniChart').getContext('2d');
+    var testovaniChart = new Chart(testovani, {
+        // The type of chart we want to create
+        type: 'bar',
 
-var testovani = document.getElementById('testovaniChart').getContext('2d');
-var testovaniChart = new Chart(testovani, {
-    // The type of chart we want to create
-    type: 'line',
+        // The data for our dataset
+        data: {
+            labels: datumy,
+            datasets: [
+                {
+                    label: 'PCR testy',
+                    backgroundColor: '#85AB28',
+                    borderColor: '#85AB28',
+                    data: dataPCR,
+                },
+                {
+                    label: 'Antigenní testy',
+                    backgroundColor: '#CACF00',
+                    borderColor: '#CACF00',
+                    data: dataAntigenni,
+                },
+/*                 {
+                    label: 'odběry',
+                    // backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(92, 195, 237)',
+                    data: dataOdbery,
+                } */
+            ]
+        },
 
-    // The data for our dataset
-    data: {
-        labels: ['17. 1.', '18. 1.', '19. 1.', '20. 1.', '21. 1.', '24. 1.', '25. 1.', '26. 1.', '27. 1.', '28. 1.', '31. 1.', '1. 2.', '2. 2.', '3. 2.', '4. 2.'],
-        datasets: [
-            {
-                label: 'PCR testy',
-                // backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(57, 169, 53)',
-                data: [316, 1016, 643, 760, 630, 315, 1025, 955, 782, 614, 214, 1027, 862, 799, 661]
+        // Configuration options go here
+        options: {
+            maintainAspectRatio: false,
+            // aspectRatio: 1,
+            legend: {
+                labels: {
+                    boxWidth: 12,
+                    //usePointStyle: true,
+                    fontColor: '#394A59',
+                },
+                // align: 'start',
             },
-            {
-                label: 'Antigenní testy',
-                // backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(255, 150, 0)',
-                data: [260, 267, 254, 209, 241, 290, 287, 277, 262, 259, 303, 279, 291, 305, 310]
+            scales: {
+                xAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        display: false,
+                    },
+                    ticks: {
+                        autoSkip: true,
+                        //maxTicksLimit: 10,
+                        maxRotation: 0,
+                        minRotation: 0,
+                        fontColor: '#394A59',
+                    }
+                }],
+                yAxes: [{
+                    stacked: true,
+                    gridLines: {
+                        color: '#f2f5f8',
+                    },
+                    ticks: {
+                        fontColor: '#394A59',
+                        //fontSize: '18',
+                    },
+
+                }]
             },
-            {
-                label: 'odběry',
-                // backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(92, 195, 237)',
-                data: [102, 297, 292, 249, 233, 121, 233, 309, 227, 254, 84, 320, 325, 285, 242]
-            }
-        ]
-    },
+        }
+    });
+}
 
-    // Configuration options go here
-    options: {
-        aspectRatio: 1,
-    }
-});
+function vykresliOckovani() {
+    var ockovani = document.getElementById('ockovaniChart').getContext('2d');
+    var ockovaniChart = new Chart(ockovani, {
+        // The type of chart we want to create
+        type: 'bar',
 
-var ockovani = document.getElementById('ockovaniChart').getContext('2d');
-var ockovaniChart = new Chart(ockovani, {
-    // The type of chart we want to create
-    type: 'line',
+        // The data for our dataset
+        data: {
+            labels: datumy,
+            datasets: [
+                {
+                    label: 'očkování',
+                    // backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(57, 169, 53)',
+                    data: dataOckovani,
+                }
+            ]
+        },
 
-    // The data for our dataset
-    data: {
-        labels: ['17. 1.', '18. 1.', '19. 1.', '20. 1.', '21. 1.', '24. 1.', '25. 1.', '26. 1.', '27. 1.', '28. 1.', '31. 1.', '1. 2.', '2. 2.', '3. 2.', '4. 2.'],
-        datasets: [
-            {
-                label: 'očkování',
-                // backgroundColor: 'rgb(255, 99, 132)',
-                borderColor: 'rgb(57, 169, 53)',
-                data: [298, 397, 318, 312, 346, 192, 259, 323, 294, 210, 145, 483, 286, 450, 475]
-            }
-        ]
-    },
+        // Configuration options go here
+        options: {
+            aspectRatio: 1,
+        }
+    });
+}
 
-    // Configuration options go here
-    options: {
-        aspectRatio: 1,
-    }
-});
