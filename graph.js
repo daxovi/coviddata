@@ -44,8 +44,11 @@ function vykresliHospitalizovani() {
                     boxWidth: 12,
                     //usePointStyle: true,
                     fontColor: '#394A59',
+                    
                 },
-                // align: 'start',
+                position: 'bottom',
+                align: 'start',
+                
             },
             scales: {
                 xAxes: [{
@@ -118,7 +121,8 @@ function vykresliTestovani() {
                     //usePointStyle: true,
                     fontColor: '#394A59',
                 },
-                // align: 'start',
+                position: 'bottom',
+                align: 'start',
             },
             scales: {
                 xAxes: [{
@@ -179,7 +183,8 @@ function vykresliOckovani() {
                     //usePointStyle: true,
                     fontColor: '#394A59',
                 },
-                // align: 'start',
+                position: 'bottom',
+                align: 'start',
             },
             scales: {
                 xAxes: [{
@@ -240,7 +245,8 @@ function vykresliZamestnanci() {
                     //usePointStyle: true,
                     fontColor: '#394A59',
                 },
-                // align: 'start',
+                position: 'bottom',
+                align: 'start',
             },
             scales: {
                 xAxes: [{
