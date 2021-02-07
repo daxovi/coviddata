@@ -27,7 +27,7 @@ function vykresliHospitalizovani() {
                 data: dataJip,
             },
             {
-                label: 'Standardní pokoj',
+                label: 'standardní pokoj',
                 backgroundColor: '#E69463',
                 borderColor: '#E69463',
                 data: dataStandardni,
@@ -94,7 +94,7 @@ function vykresliTestovani() {
                     data: dataPCR,
                 },
                 {
-                    label: 'Antigenní testy',
+                    label: 'antigenní testy',
                     backgroundColor: '#CACF00',
                     borderColor: '#CACF00',
                     data: dataAntigenni,
@@ -161,9 +161,9 @@ function vykresliOckovani() {
             labels: datumy,
             datasets: [
                 {
-                    label: 'očkování',
-                    backgroundColor: '#ECA815',
-                    borderColor: '#D39205',
+                    label: 'počet vakcinací',
+                    backgroundColor: '#EFC728',
+                    borderColor: '#ECA815',
                     data: dataOckovani,
                 }
             ]
@@ -204,6 +204,50 @@ function vykresliOckovani() {
                         fontColor: '#394A59',
                         //fontSize: '18',
                     },
+
+                }]
+            },
+        }
+    });
+}
+
+function vykresliZamestnanci() {
+    var zamestnanci = document.getElementById('zamestnanciChart').getContext('2d');
+    var ockovaniChart = new Chart(zamestnanci, {
+        // The type of chart we want to create
+        type: 'doughnut',
+
+        // The data for our dataset
+        data: {
+            labels: ["očkovaní (v %)", "neočkovaní (v %)"],
+            datasets: [
+                {
+                    label: 'očkování',
+                    backgroundColor: ['#446FCB', '#B2CAD8'],
+                    borderColor: '#fff',
+                    data: dataZamestnanci,
+                }
+            ]
+        },
+
+        // Configuration options go here
+        options: {
+            maintainAspectRatio: false,
+            // aspectRatio: 1,
+            legend: {
+                labels: {
+                    boxWidth: 12,
+                    //usePointStyle: true,
+                    fontColor: '#394A59',
+                },
+                // align: 'start',
+            },
+            scales: {
+                xAxes: [{
+                    display: false,
+                }],
+                yAxes: [{
+                    display: false,
 
                 }]
             },
