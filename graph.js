@@ -12,23 +12,24 @@ dataAntigenni = dataAntigenni.reverse();
 dataOdbery = dataOdbery.reverse();
 
 function vykresliHospitalizovani() {
+    document.getElementById('soucet').innerHTML = dataJip[dataJip.length-1] + dataStandardni[dataStandardni.length-1];
     var hospitalizovani = document.getElementById('hospitalizovaniChart').getContext('2d');
     var hospitalizovaniChart = new Chart(hospitalizovani, {
         // The type of chart we want to create
-        type: 'bar',
+        type: 'line',
 
         // The data for our dataset
         data: {
             labels: datumy,
             datasets: [{
                 label: 'JIP pokoj',
-                backgroundColor: '#D04818',
+                backgroundColor: 'rgb(0,0,0,0)',
                 borderColor: '#D04818',
                 data: dataJip,
             },
             {
                 label: 'standardní pokoj',
-                backgroundColor: '#E69463',
+                backgroundColor: 'rgb(0,0,0,0)',
                 borderColor: '#E69463',
                 data: dataStandardni,
             }
@@ -52,7 +53,7 @@ function vykresliHospitalizovani() {
             },
             scales: {
                 xAxes: [{
-                    stacked: true,
+                    stacked: false,
                     gridLines: {
                         display: false,
                     },
@@ -65,7 +66,7 @@ function vykresliHospitalizovani() {
                     }
                 }],
                 yAxes: [{
-                    stacked: true,
+                    stacked: false,
                     gridLines: {
                         color: '#f2f5f8',
                     },
@@ -81,6 +82,7 @@ function vykresliHospitalizovani() {
 }
 
 function vykresliTestovani() {
+    document.getElementById('soucet').innerHTML = dataPCR[dataPCR.length-1] + dataAntigenni[dataAntigenni.length-1];
     var testovani = document.getElementById('testovaniChart').getContext('2d');
     var testovaniChart = new Chart(testovani, {
         // The type of chart we want to create
@@ -155,6 +157,7 @@ function vykresliTestovani() {
 }
 
 function vykresliOckovani() {
+    document.getElementById('soucet').innerHTML = dataOckovani[dataOckovani.length-1];
     var ockovani = document.getElementById('ockovaniChart').getContext('2d');
     var ockovaniChart = new Chart(ockovani, {
         // The type of chart we want to create

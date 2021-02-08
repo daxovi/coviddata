@@ -5,11 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COVIDDATA graf</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://covid.fnol.cz/dist/yellow.css?7b09f4eb7d">
+    <link rel="stylesheet" href="https://covid.fnol.cz/dist/editor.css?1fa731d3ee">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap&subset=latin-ext&display:fallback" rel="stylesheet">
+    <style>
+        #tracy-debug img, #tracy-debug svg {
+            width: 16px;
+        }
+        body {
+            padding: 0;
+        }
+    </style>
 </head>
 
 <body>
     <div style="height: 300px;">
+        <h3>Počet hospitalizovaných pacientů: <span id="soucet" style="color: #d49200;"></span></h3>
         <canvas id="hospitalizovaniChart"></canvas>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
