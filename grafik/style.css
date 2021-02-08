@@ -1,0 +1,36 @@
+body {
+    font-family: acumin-pro-condensed, sans-serif;
+font-weight: 500;
+font-style: normal;
+padding: 0;
+margin: 0;
+}
+h1 {
+    font-family: acumin-pro-condensed, sans-serif;
+font-weight: 800;
+font-style: normal;
+text-transform: uppercase;
+margin-bottom: 50px;
+font-size: 65px;
+}
+
+h2 {
+    font-family: acumin-pro-condensed, sans-serif;
+font-weight: 700;
+font-style: normal;
+text-transform: uppercase;
+margin-bottom: -5px;
+font-size: 65px
+}
+p {
+    margin-bottom: 0px;
+    font-size: 36px;
+}
+#datum {
+    white-space: nowrap;
+}
+
+canvas {
+    padding: 0;
+    margin: 0;
+}
