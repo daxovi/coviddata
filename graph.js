@@ -30,7 +30,7 @@ function vykresliHospitalizovani() {
             {
                 label: 'standardní pokoj',
                 backgroundColor: 'rgb(0,0,0,0)',
-                borderColor: '#E69463',
+                borderColor: '#588FD7',
                 data: dataStandardni,
             }
             ]
