@@ -212,7 +212,7 @@ function drawWeb() {
 
                 ctx.font = polotucnyTxt;
                 ctx.fillStyle = "white";
-                ctx.fillText("klikněte na tento banner", 320 + ctx.measureText("pro aktuální informace o testování a očkování").width - 17, 540);
+                ctx.fillText("klikněte na tento banner", 669, 540);
 
                 ctx.fillStyle = "#fff";
                 ctx.fillRect(668, 543, 198, 2);
