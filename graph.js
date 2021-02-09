@@ -22,13 +22,13 @@ function vykresliHospitalizovani() {
         data: {
             labels: datumy,
             datasets: [{
-                label: 'JIP pokoj',
+                label: 'JIP lůžka',
                 backgroundColor: 'rgb(0,0,0,0)',
                 borderColor: '#D04818',
                 data: dataJip,
             },
             {
-                label: 'standardní pokoj',
+                label: 'standardní lůžka',
                 backgroundColor: 'rgb(0,0,0,0)',
                 borderColor: '#588FD7',
                 data: dataStandardni,
